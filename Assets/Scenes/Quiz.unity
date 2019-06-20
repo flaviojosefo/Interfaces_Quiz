@@ -2351,6 +2351,7 @@ MonoBehaviour:
   originalSliderTime: 30
   slider: {fileID: 1607753720}
   sliderTime: {fileID: 384971166}
+  startButton: {fileID: 1864261955}
 --- !u!1 &1607753718
 GameObject:
   m_ObjectHideFlags: 0

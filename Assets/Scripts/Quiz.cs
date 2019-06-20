@@ -17,8 +17,9 @@ namespace MathQuiz {
         public TMP_Text sliderTime;
         private float _currentSliderTime;
 
-        [Header("Buttons")]
-        public Button startButton;
+        [Header("Q&A")]
+        public TMP_Text question;
+        public Button[] answers;
 
         void Start() {
 
@@ -26,16 +27,8 @@ namespace MathQuiz {
         }
 
         void Update() {
-
+            
             UpdateSlider();
-        }
-
-        private void CheckInput() {
-
-            if (Input.GetKeyDown(KeyCode.DownArrow)) {
-
-                startButton.Select();
-            }
         }
 
         private void SetSliderDefaultValues() {
@@ -55,7 +48,7 @@ namespace MathQuiz {
 
             } else {
 
-                // END QUIZ
+                // END QUIZ...OR SKIP QUESTION?
             }
         }
 
@@ -88,6 +81,16 @@ namespace MathQuiz {
 
             print("Yes, it quit.");
             Application.Quit();
+        }
+
+        public void GetQuestion(int questionID) {
+
+
+        }
+
+        public void GetAnswers(int questionID) {
+
+
         }
     }
 }
