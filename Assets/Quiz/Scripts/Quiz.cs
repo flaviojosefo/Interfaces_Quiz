@@ -100,6 +100,7 @@ namespace MathQuiz {
             totalCorrectAnwers = 0;
 
             GetAnswers(GetQuestion());
+            ActivateAids();
             ResetTimer();
             quiz.SetActive(true);
         }
@@ -253,7 +254,7 @@ namespace MathQuiz {
                 case 0:
 
                     FiftyFifty();
-                    Destroy(aidButtons[0]);
+                    aidButtons[helpType].SetActive(false);
                     break;
 
                 case 1:
@@ -273,6 +274,14 @@ namespace MathQuiz {
 
                     // change answer
                     break;
+            }
+        }
+
+        private void ActivateAids() {
+
+            foreach (GameObject g in aidButtons) {
+
+                g.SetActive(true);
             }
         }
     }
