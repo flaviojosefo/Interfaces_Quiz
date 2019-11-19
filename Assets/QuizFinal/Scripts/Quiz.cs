@@ -27,6 +27,9 @@ namespace MathQuiz {
         public Transform answersParent;
 
         [Header("Endscreen Elements")]
+        public Color goodColor;
+        public Color okColor;
+        public Color badColor;
         public Image background;
         public TMP_Text grade;
         public TMP_Text report;
@@ -199,17 +202,17 @@ namespace MathQuiz {
             if (totalCorrectAnwers <= 2) {
 
                 grade.text = "MAU";
-                background.color = Color.red;
+                background.color = badColor;
 
             } else if (totalCorrectAnwers <= 5) {
 
                 grade.text = "BOM";
-                background.color = Color.yellow;
+                background.color = okColor;
 
             } else {
 
                 grade.text = "MUITO BOM";
-                background.color = Color.green;
+                background.color = goodColor;
             }
 
             endGame.SetActive(true);
