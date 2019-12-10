@@ -3,40 +3,43 @@ using System.Collections.Generic;
 using UnityEngine;
 using PathCreation;
 
-public class CameraFollow : MonoBehaviour {
+namespace MathQuiz {
 
-    [SerializeField] private PathCreator pathCreator = null;
+    public class CameraFollow : MonoBehaviour {
 
-    [SerializeField] private Transform point = null;
+        [SerializeField] private PathCreator pathCreator = null;
 
-    [SerializeField] private float speed = 0.0f;
+        [SerializeField] private Transform point = null;
 
-    [SerializeField] private float minDistance = 0.0f;
+        [SerializeField] private float speed = 0.0f;
 
-    private float distanceTravelled = 0.0f;
+        [SerializeField] private float minDistance = 0.0f;
 
-    void Update() {
+        private float distanceTravelled = 0.0f;
 
-        if (!SlowDown()) {
+        void Update() {
 
-            distanceTravelled += speed * Time.deltaTime;
+            if (!SlowDown()) {
 
-            transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled);
-            transform.rotation = pathCreator.path.GetRotationAtDistance(distanceTravelled);
+                distanceTravelled += speed * Time.deltaTime;
+
+                transform.position = pathCreator.path.GetPointAtDistance(distanceTravelled);
+                transform.rotation = pathCreator.path.GetRotationAtDistance(distanceTravelled);
+            }
+
+
         }
 
-        
-    }
+        private bool SlowDown() {
 
-    private bool SlowDown() {
+            if (Vector3.Distance(transform.position, point.position) <= minDistance) {
 
-        if (Vector3.Distance(transform.position, point.position) <= minDistance) {
+                speed = 0;
+                transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, 0);
+                return true;
+            }
 
-            speed = 0;
-            transform.eulerAngles = new Vector3(transform.eulerAngles.x, transform.eulerAngles.y, 0);
-            return true;
+            return false;
         }
-
-        return false;
     }
 }
