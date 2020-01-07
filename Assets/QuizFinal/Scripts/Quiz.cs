@@ -101,7 +101,9 @@ namespace MathQuiz {
             totalAnswers = 0;
             totalCorrectAnwers = 0;
 
-            GetAnswers(GetQuestion());
+            currentQuestion = 0;
+
+            GetAnswers(GetQuestion(currentQuestion));
             ActivateAids();
             ResetTimer();
             quiz.SetActive(true);
@@ -131,29 +133,22 @@ namespace MathQuiz {
             }
         }
 
-        public int GetQuestion() {
+        public int GetQuestion(int next) {
 
-            if (aaQuestions == null) aaQuestions = new List<int>();
+            if (next < questions.Count) {
 
-            int n = Random.Range(0, questions.Count);
+                question.text = questions[next].question;
+                questionImg.sprite = questions[next].questionImage;
 
-            int i = 0;
+                currentQuestion = next;
 
-            while (aaQuestions.Contains(n) && i < 1000) {
+                return next;
 
-                n = Random.Range(0, questions.Count);
-                i++;
+            } else {
+
+                ShowEndScreen();
+                return 0;
             }
-
-            if (i >= 1000) ShowEndScreen();
-
-            question.text = questions[n].question;
-            questionImg.sprite = questions[n].questionImage;
-            aaQuestions.Add(n);
-
-            currentQuestion = n;
-
-            return n;
         }
 
         private void GetAnswers(int questionID) {
@@ -166,7 +161,7 @@ namespace MathQuiz {
                 b.transform.GetChild(0).GetComponent<TMP_Text>().text = questions[questionID].answers[i].answer;
 
                 int tempI = i;
-                b.onClick.AddListener(delegate { VerifyAnswer(questionID, tempI); GetAnswers(GetQuestion()); ResetTimer(); });
+                b.onClick.AddListener(delegate { VerifyAnswer(questionID, tempI); GetAnswers(GetQuestion(currentQuestion += 1)); ResetTimer(); });
             }
         }
 
