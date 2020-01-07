@@ -3,6 +3,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
+using System.Reflection;
 
 namespace MathQuiz {
 
@@ -37,14 +38,13 @@ namespace MathQuiz {
         public List<Group> groups;
 
         [Header("Questions")]
-        public List<Questions> questions;
+        public List<Question> questions;
 
         [Header("Aid Buttons")]
         public List<GameObject> aidButtons;
 
         private List<int> wrongQuestions;
 
-        private int currentGroup;
         private int currentQuestion;
 
         private int totalAnswers;
@@ -136,7 +136,9 @@ namespace MathQuiz {
 
         private void GetRandomGroup() {
 
-            currentGroup = Random.Range(0, 3);
+            //currentGroup = Random.Range(0, 3);
+
+            questions = groups[Random.Range(0, 0)].questions;
         }
 
         public int GetQuestion(int next) {
@@ -161,10 +163,10 @@ namespace MathQuiz {
 
             DeleteAllButtons();
             
-            for (int i = 0; i < questions[questionID].answers.Count; i++) {
+            for (int i = 1; i <= 3; i++) {
 
                 Button b = Instantiate(answerButton, answersParent);
-                b.transform.GetChild(0).GetComponent<TMP_Text>().text = questions[questionID].answers[i].answer;
+                b.transform.GetChild(0).GetComponent<TMP_Text>().text = (string)questions[questionID].GetType().GetField($"answer{i}").GetValue(questions[questionID]);
 
                 int tempI = i;
                 b.onClick.AddListener(delegate { VerifyAnswer(questionID, tempI); GetAnswers(GetQuestion(currentQuestion += 1)); ResetTimer(); });
@@ -173,14 +175,11 @@ namespace MathQuiz {
 
         private void VerifyAnswer(int questionID, int answerID) {
 
-            for (int i = 0; i < questions[questionID].answers.Count; i++) {
+            if (questions[questionID].answer == answerID) {
 
-                if (i == answerID && questions[questionID].answers[answerID].isCorrect) {
-                    
-                    totalAnswers += 1;
-                    totalCorrectAnwers += 1;
-                    return;
-                }
+                totalAnswers += 1;
+                totalCorrectAnwers += 1;
+                return;
             }
 
             wrongQuestions.Add(questionID);
@@ -199,12 +198,12 @@ namespace MathQuiz {
 
             ShowIncorrectAnswers();
 
-            if (totalCorrectAnwers <= 2) {
+            if (totalCorrectAnwers <= 3) {
 
                 grade.text = "MAU";
                 background.color = badColor;
 
-            } else if (totalCorrectAnwers <= 5) {
+            } else if (totalCorrectAnwers <= 7) {
 
                 grade.text = "BOM";
                 background.color = okColor;
@@ -238,16 +237,15 @@ namespace MathQuiz {
 
         private void FiftyFifty() {
 
-            int n = 0;
+            int n;
 
-            for (int i = 0; i < questions[currentQuestion].answers.Count; i++) {
+            do {
 
-                if (!questions[currentQuestion].answers[i].isCorrect && n < questions[currentQuestion].answers.Count/2) {
+                n = Random.Range(1, 4);
 
-                    Destroy(answersParent.GetChild(i).gameObject);
-                    n++;
-                }
-            }
+            } while (questions[currentQuestion].answer == n);
+
+            Destroy(answersParent.GetChild(n - 1).gameObject);
         }
 
         public void UseAid(int helpType) {

@@ -988,6 +988,161 @@ MonoBehaviour:
   background: {fileID: 6971909914951328720}
   grade: {fileID: 6971909914148071481}
   report: {fileID: 6971909913799579861}
+  groups:
+  - questions:
+    - question: "A figura B \xE9 obtida da figura A por uma:"
+      questionImage: {fileID: 0}
+      answers:
+      - isCorrect: 0
+        answer: "Transla\xE7\xE3o"
+      - isCorrect: 1
+        answer: "Reflex\xE3o"
+      - isCorrect: 0
+        answer: "Rota\xE7\xE3o"
+    - question: AB + FE = ?
+      questionImage: {fileID: 0}
+      answers:
+      - isCorrect: 1
+        answer: AC
+      - isCorrect: 0
+        answer: CA
+      - isCorrect: 0
+        answer: AD
+    - question: P + QS = ?
+      questionImage: {fileID: 0}
+      answers:
+      - isCorrect: 0
+        answer: Ponto P
+      - isCorrect: 1
+        answer: Ponto T
+      - isCorrect: 0
+        answer: Ponto Q
+    - question: A + BC = ?
+      questionImage: {fileID: 0}
+      answers:
+      - isCorrect: 0
+        answer: Ponto C
+      - isCorrect: 0
+        answer: AD
+      - isCorrect: 1
+        answer: D
+    - question: C + DA = ?
+      questionImage: {fileID: 0}
+      answers:
+      - isCorrect: 0
+        answer: Ponto A
+      - isCorrect: 1
+        answer: Ponto B
+      - isCorrect: 0
+        answer: Ponto D
+    - question: FE + CB = ?
+      questionImage: {fileID: 0}
+      answers:
+      - isCorrect: 1
+        answer: 0
+      - isCorrect: 0
+        answer: FD
+      - isCorrect: 0
+        answer: EF
+    - question: IG + DE = ?
+      questionImage: {fileID: 0}
+      answers:
+      - isCorrect: 1
+        answer: IH
+      - isCorrect: 0
+        answer: HI
+      - isCorrect: 0
+        answer: EI
+    - question: Qual a amplitude de DOE?
+      questionImage: {fileID: 0}
+      answers:
+      - isCorrect: 0
+        answer: 30
+      - isCorrect: 1
+        answer: 45
+      - isCorrect: 0
+        answer: 60
+    - question: "Qual \xE9 a imagem do tri\xE2ngulo [HOG], por uma rota\xE7\xE3o de
+        centro O e amplitude \u2013 180\xBA? "
+      questionImage: {fileID: 0}
+      answers:
+      - isCorrect: 0
+        answer: "Tri\xE2ngulo [AOB]"
+      - isCorrect: 0
+        answer: "Tri\xE2ngulo [COB]"
+      - isCorrect: 1
+        answer: "Tri\xE2ngulo [DOC]"
+    - question: AH + AE = ?
+      questionImage: {fileID: 0}
+      answers:
+      - isCorrect: 1
+        answer: AI
+      - isCorrect: 0
+        answer: IA
+      - isCorrect: 0
+        answer: HE
+  - questions:
+    - question: 
+      questionImage: {fileID: 0}
+      answers: []
+    - question: 
+      questionImage: {fileID: 0}
+      answers: []
+    - question: 
+      questionImage: {fileID: 0}
+      answers: []
+    - question: 
+      questionImage: {fileID: 0}
+      answers: []
+    - question: 
+      questionImage: {fileID: 0}
+      answers: []
+    - question: 
+      questionImage: {fileID: 0}
+      answers: []
+    - question: 
+      questionImage: {fileID: 0}
+      answers: []
+    - question: 
+      questionImage: {fileID: 0}
+      answers: []
+    - question: 
+      questionImage: {fileID: 0}
+      answers: []
+    - question: 
+      questionImage: {fileID: 0}
+      answers: []
+  - questions:
+    - question: 
+      questionImage: {fileID: 0}
+      answers: []
+    - question: 
+      questionImage: {fileID: 0}
+      answers: []
+    - question: 
+      questionImage: {fileID: 0}
+      answers: []
+    - question: 
+      questionImage: {fileID: 0}
+      answers: []
+    - question: 
+      questionImage: {fileID: 0}
+      answers: []
+    - question: 
+      questionImage: {fileID: 0}
+      answers: []
+    - question: 
+      questionImage: {fileID: 0}
+      answers: []
+    - question: 
+      questionImage: {fileID: 0}
+      answers: []
+    - question: 
+      questionImage: {fileID: 0}
+      answers: []
+    - question: 
+      questionImage: {fileID: 0}
+      answers: []
   questions:
   - question: "Qual das seguintes informa\xE7\xF5es \xE9 verdadeira?"
     questionImage: {fileID: 21300000, guid: 92132f9f172891d4884db5ee02cc7362, type: 3}
@@ -1170,7 +1325,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6971909913400720603}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: -0}
   m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
   m_Children: []
   m_Father: {fileID: 6971909914840379905}
@@ -1178,7 +1333,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -33}
+  m_AnchoredPosition: {x: 320, y: -33}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6971909913400720601
@@ -1204,7 +1359,7 @@ MonoBehaviour:
   m_CellSize: {x: 250, y: 75}
   m_Spacing: {x: 100, y: 75}
   m_Constraint: 1
-  m_ConstraintCount: 2
+  m_ConstraintCount: 3
 --- !u!1 &6971909913427387224
 GameObject:
   m_ObjectHideFlags: 0
@@ -2909,10 +3064,10 @@ RectTransform:
   m_Father: {fileID: 6971909913126184689}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: -227.5}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 75, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6971909914297700469
 CanvasRenderer:
@@ -3076,10 +3231,10 @@ RectTransform:
   m_Father: {fileID: 6971909913126184689}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: -372.5}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 75, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6971909914446721374
 CanvasRenderer:
@@ -3204,10 +3359,10 @@ RectTransform:
   m_Father: {fileID: 6971909913126184689}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: -517.5}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 75, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6971909914461517690
 CanvasRenderer:
@@ -3929,10 +4084,10 @@ RectTransform:
   m_Father: {fileID: 6971909913126184689}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: -82.5}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 75, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6971909914856916975
 CanvasRenderer:

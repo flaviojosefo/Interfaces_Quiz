@@ -6,6 +6,6 @@ namespace MathQuiz {
     [Serializable]
     public class Group {
 
-        public List<Questions> questions;
+        public List<Question> questions;
     }
 }
