@@ -1,8 +1,9 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace MathQuiz {
 
-    [System.Serializable]
+    [Serializable]
     public class Answers {
 
         public bool isCorrect;

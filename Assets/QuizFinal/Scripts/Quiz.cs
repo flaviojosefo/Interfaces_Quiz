@@ -33,17 +33,18 @@ namespace MathQuiz {
         public TMP_Text grade;
         public TMP_Text report;
 
+        [Header("Question Groups")]
+        public List<Group> groups;
+
         [Header("Questions")]
         public List<Questions> questions;
 
         [Header("Aid Buttons")]
         public List<GameObject> aidButtons;
 
-        // Already asked questions
-        private List<int> aaQuestions;
-
         private List<int> wrongQuestions;
 
+        private int currentGroup;
         private int currentQuestion;
 
         private int totalAnswers;
@@ -103,6 +104,8 @@ namespace MathQuiz {
 
             currentQuestion = 0;
 
+            GetRandomGroup();
+
             GetAnswers(GetQuestion(currentQuestion));
             ActivateAids();
             ResetTimer();
@@ -111,8 +114,6 @@ namespace MathQuiz {
 
         // 'public' to use in button if the person wants to exit
         public void EndQuiz() {
-
-            aaQuestions = new List<int>();
 
             endGame.SetActive(false);
             quiz.SetActive(false);
@@ -131,6 +132,11 @@ namespace MathQuiz {
                 print("Yes, it quit.");
                 Application.Quit();
             }
+        }
+
+        private void GetRandomGroup() {
+
+            currentGroup = Random.Range(0, 3);
         }
 
         public int GetQuestion(int next) {

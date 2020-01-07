@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 namespace MathQuiz {
     
-    [System.Serializable]
+    [Serializable]
     public class Questions {
 
         [TextArea(3, 5)]
