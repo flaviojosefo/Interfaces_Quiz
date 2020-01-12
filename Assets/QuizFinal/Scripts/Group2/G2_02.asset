@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c1251f04886d3be4aa4d6fe437ddf751, type: 3}
-  m_Name: 7
+  m_Name: G2_02
   m_EditorClassIdentifier: 
-  question: IG + DE = ?
+  question: AB + NO = ?
   questionImage: {fileID: 0}
-  answer1: IH
-  answer2: HI
-  answer3: EI
-  answer: 1
+  answer1: AK
+  answer2: AC
+  answer3: IL
+  answer: 2

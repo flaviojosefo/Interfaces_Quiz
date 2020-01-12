@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c1251f04886d3be4aa4d6fe437ddf751, type: 3}
-  m_Name: 10
+  m_Name: G1_08
   m_EditorClassIdentifier: 
-  question: AH + AE = ?
+  question: Qual a amplitude de DOE?
   questionImage: {fileID: 0}
-  answer1: AI
-  answer2: IA
-  answer3: HE
-  answer: 1
+  answer1: 30
+  answer2: 45
+  answer3: 60
+  answer: 2

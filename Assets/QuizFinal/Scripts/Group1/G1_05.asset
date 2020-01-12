@@ -10,12 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c1251f04886d3be4aa4d6fe437ddf751, type: 3}
-  m_Name: 9
+  m_Name: G1_05
   m_EditorClassIdentifier: 
-  question: "Qual \xE9 a imagem do tri\xE2ngulo [HOG], por uma rota\xE7\xE3o de centro
-    O e amplitude \u2013 180\xBA?"
+  question: C + DA = ?
   questionImage: {fileID: 0}
-  answer1: "Tri\xE2ngulo [AOB]"
-  answer2: "Tri\xE2ngulo [COB]"
-  answer3: "Tri\xE2ngulo [DOC]"
-  answer: 3
+  answer1: Ponto A
+  answer2: Ponto B
+  answer3: Ponto D
+  answer: 2

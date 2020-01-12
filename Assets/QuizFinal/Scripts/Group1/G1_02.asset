@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c1251f04886d3be4aa4d6fe437ddf751, type: 3}
-  m_Name: 5
+  m_Name: G1_02
   m_EditorClassIdentifier: 
-  question: 4
+  question: AB + FE = ?
   questionImage: {fileID: 0}
-  answer1: 7
-  answer2: 2
-  answer3: 3
-  answer: 2
+  answer1: AC
+  answer2: CA
+  answer3: AD
+  answer: 1

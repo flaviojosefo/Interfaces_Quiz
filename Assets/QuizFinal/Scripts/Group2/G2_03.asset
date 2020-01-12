@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c1251f04886d3be4aa4d6fe437ddf751, type: 3}
-  m_Name: 8
+  m_Name: G2_03
   m_EditorClassIdentifier: 
-  question: Qual a amplitude de DOE?
+  question: EG + PO = ?
   questionImage: {fileID: 0}
-  answer1: 30
-  answer2: 45
-  answer3: 60
-  answer: 2
+  answer1: EF
+  answer2: FE
+  answer3: 0
+  answer: 1

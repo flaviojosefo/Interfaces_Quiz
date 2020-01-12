@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c1251f04886d3be4aa4d6fe437ddf751, type: 3}
-  m_Name: 2
+  m_Name: G3_08
   m_EditorClassIdentifier: 
-  question: AB + FE = ?
+  question: Qual a amplitude de FOD?
   questionImage: {fileID: 0}
-  answer1: AC
-  answer2: CA
-  answer3: AD
-  answer: 1
+  answer1: 45
+  answer2: 60
+  answer3: 90
+  answer: 3
