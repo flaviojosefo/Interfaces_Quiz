@@ -1023,6 +1023,11 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 11400000, guid: 81108173530808d418b63b44d86de4e4,
         type: 2}
+    - target: {fileID: 6971909914856916969, guid: 60fac16e3f277434698a0aedfa4fa0df,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: UseHelp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 60fac16e3f277434698a0aedfa4fa0df, type: 3}
 --- !u!1 &2133733244

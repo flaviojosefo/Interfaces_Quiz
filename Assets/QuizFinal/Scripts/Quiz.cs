@@ -107,7 +107,7 @@ namespace MathQuiz {
             GetRandomGroup();
 
             GetAnswers(GetQuestion(currentQuestion));
-            ActivateAids();
+            ActivateHelp();
             ResetTimer();
             quiz.SetActive(true);
         }
@@ -136,9 +136,7 @@ namespace MathQuiz {
 
         private void GetRandomGroup() {
 
-            //currentGroup = Random.Range(0, 3);
-
-            questions = groups[Random.Range(0, 0)].questions;
+            questions = groups[Random.Range(0, 3)].questions;
         }
 
         public int GetQuestion(int next) {
@@ -166,7 +164,8 @@ namespace MathQuiz {
             for (int i = 1; i <= 3; i++) {
 
                 Button b = Instantiate(answerButton, answersParent);
-                b.transform.GetChild(0).GetComponent<TMP_Text>().text = (string)questions[questionID].GetType().GetField($"answer{i}").GetValue(questions[questionID]);
+                b.transform.GetChild(0).GetComponent<TMP_Text>().text = 
+                    (string)questions[questionID].GetType().GetField($"answer{i}").GetValue(questions[questionID]);
 
                 int tempI = i;
                 b.onClick.AddListener(delegate { VerifyAnswer(questionID, tempI); GetAnswers(GetQuestion(currentQuestion += 1)); ResetTimer(); });
@@ -248,7 +247,7 @@ namespace MathQuiz {
             Destroy(answersParent.GetChild(n - 1).gameObject);
         }
 
-        public void UseAid(int helpType) {
+        public void UseHelp(int helpType) {
 
             switch (helpType) {
 
@@ -278,7 +277,7 @@ namespace MathQuiz {
             }
         }
 
-        private void ActivateAids() {
+        private void ActivateHelp() {
 
             foreach (GameObject g in aidButtons) {
 
