@@ -1,19 +1,22 @@
 ﻿using UnityEngine;
 
-[CreateAssetMenu(fileName = "Question", menuName = "ScriptableObject/Question")]
-public class Question : ScriptableObject {
+namespace MathQuiz {
 
-    [Header("Question Settings")]
-    [TextArea(3, 5)]
-    public string question;
+    [CreateAssetMenu(fileName = "Question", menuName = "ScriptableObject/Question")]
+    public class Question : ScriptableObject {
 
-    public Sprite questionImage;
+        [Header("Question Settings")]
+        [TextArea(3, 5)]
+        public string question;
 
-    [Header("Answers")]
-    public string answer1;
-    public string answer2;
-    public string answer3;
+        public Sprite questionImage;
 
-    [Header("Correct Answer")]
-    public int answer;
+        [Header("Answers")]
+        public string answer1;
+        public string answer2;
+        public string answer3;
+
+        [Header("Correct Answer")]
+        public int answer;
+    }
 }

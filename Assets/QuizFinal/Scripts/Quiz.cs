@@ -1,15 +1,17 @@
 ﻿using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
-using System.Reflection;
 
 namespace MathQuiz {
 
     public class Quiz : MonoBehaviour {
 
         [Header("UI Elements")]
+        public Button startButton;
         public GameObject mainMenu;
         public GameObject quiz;
         public GameObject endGame;
@@ -37,18 +39,21 @@ namespace MathQuiz {
         [Header("Question Groups")]
         public List<Group> groups;
 
-        [Header("Questions")]
-        public List<Question> questions;
-
-        [Header("Aid Buttons")]
+        [Header("Help Buttons")]
         public List<GameObject> aidButtons;
 
+        [Header("Navigation System")]
+        public EventSystem eventSys;
+
+        private List<Question> questions;
         private List<int> wrongQuestions;
 
         private int currentQuestion;
 
         private int totalAnswers;
         private int totalCorrectAnwers;
+
+        private Button middleButton;
 
         void Start() {
 
@@ -80,7 +85,7 @@ namespace MathQuiz {
 
             } else {
 
-                EndQuiz(); // for now?
+                EndQuiz(false); // for now?
             }
         }
 
@@ -113,11 +118,17 @@ namespace MathQuiz {
         }
 
         // 'public' to use in button if the person wants to exit
-        public void EndQuiz() {
+        public void EndQuiz(bool toMenu) {
 
             endGame.SetActive(false);
             quiz.SetActive(false);
             mainMenu.SetActive(true);
+
+            if (toMenu) {
+
+                startButton.animator.SetTrigger("Normal");
+                eventSys.SetSelectedGameObject(startButton.gameObject);
+            }
         }
 
         public void Quit() {
@@ -169,7 +180,25 @@ namespace MathQuiz {
 
                 int tempI = i;
                 b.onClick.AddListener(delegate { VerifyAnswer(questionID, tempI); GetAnswers(GetQuestion(currentQuestion += 1)); ResetTimer(); });
+
+                if (i == 1) {
+
+                    middleButton = b;
+                }
             }
+
+            StartCoroutine(SelectButton());
+            eventSys.SetSelectedGameObject(middleButton.gameObject);
+        }
+
+        // Play button animation 1 frame after its creation
+        // since it's inactive when created
+        private IEnumerator SelectButton() {
+
+            // wait 1 frame
+            yield return 0;
+
+            middleButton.animator.Play("Selected");
         }
 
         private void VerifyAnswer(int questionID, int answerID) {
@@ -229,7 +258,7 @@ namespace MathQuiz {
 
                 foreach (int i in wrongQuestions) {
 
-                    report.text += $"Erraste a pergunta {i+1}. \n";
+                    report.text += $"Erraste a pergunta {i + 1}. \n";
                 }
             }
         }
