@@ -28,6 +28,10 @@ namespace MathQuiz {
         public Button answerButton;
         public Transform answersParent;
 
+        [Header("Exit Window Elements")]
+        public GameObject exitWindow;
+        public GameObject noButton;
+
         [Header("Endscreen Elements")]
         public Color goodColor;
         public Color okColor;
@@ -54,6 +58,7 @@ namespace MathQuiz {
         private int totalCorrectAnwers;
 
         private Button middleButton;
+        private GameObject lastButton;
 
         void Start() {
 
@@ -64,6 +69,8 @@ namespace MathQuiz {
         }
 
         void Update() {
+
+            EnableExit();
 
             UpdateSlider();
         }
@@ -77,15 +84,48 @@ namespace MathQuiz {
 
         private void UpdateSlider() {
 
-            if (_currentSliderTime > 0 && quiz.activeSelf) {
+            if (!exitWindow.activeSelf) {
 
-                _currentSliderTime -= Time.deltaTime;
-                slider.fillAmount += Time.deltaTime / originalSliderTime;
-                sliderTime.text = ((int)_currentSliderTime).ToString();
+                if (_currentSliderTime > 0 && quiz.activeSelf) {
+
+                    _currentSliderTime -= Time.deltaTime;
+                    slider.fillAmount += Time.deltaTime / originalSliderTime;
+                    sliderTime.text = ((int)_currentSliderTime).ToString();
+
+                } else {
+
+                    EndQuiz(false); // for now?
+                }
+            }
+        }
+
+        private void EnableExit() {
+
+            if (Input.GetButtonDown("Cancel")) {
+
+                if (!exitWindow.activeSelf) {
+
+                    EnableExitWindow(true);
+
+                } else {
+
+                    EnableExitWindow(false);
+                }
+            }
+        }
+
+        public void EnableExitWindow(bool on) {
+
+            if (on) {
+
+                lastButton = eventSys.currentSelectedGameObject;
+                exitWindow.SetActive(true);
+                eventSys.SetSelectedGameObject(noButton);
 
             } else {
 
-                EndQuiz(false); // for now?
+                exitWindow.SetActive(false);
+                eventSys.SetSelectedGameObject(lastButton);
             }
         }
 
@@ -122,6 +162,8 @@ namespace MathQuiz {
 
             endGame.SetActive(false);
             quiz.SetActive(false);
+            exitWindow.SetActive(false);
+
             mainMenu.SetActive(true);
 
             if (toMenu) {
