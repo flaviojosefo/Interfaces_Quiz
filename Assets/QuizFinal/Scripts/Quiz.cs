@@ -114,6 +114,8 @@ namespace MathQuiz {
             }
         }
 
+
+        // Also used on a button
         public void EnableExitWindow(bool on) {
 
             if (on) {
